@@ -8,11 +8,13 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
+    <!-- build:css css/main.css-->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link href="css/styles.css" rel="stylesheet">
-    <title>Ristorante Con Fusion</title>
+    <!-- endbuild -->
+    <title>Ristorante Con Fusion: Home</title>
 </head>
 
 <body>
@@ -30,7 +32,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span>Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginModalBtn" role="button">
                         <span class="fa fa-sign-in"></span>Login
                     </a>
                 </span>
@@ -43,7 +45,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button type="button" data-dismiss="modal" class="close">
                         &times;
                     </button>
                 </div>
@@ -82,7 +84,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Reserve a Table</h4>
-                        <button type="button" class="close" data-toggle="modal" data-dismiss="modal">
+                        <button type="button" class="close"  data-dismiss="modal">
                             &times;
                         </button>
                 </div>
@@ -169,7 +171,7 @@
                         </div>
 
                         <div class="col-12 col-sm align-self-center">
-                            <a class="btn btn-warning btn-block btn-sm" data-toggle="modal" data-target="#reservationModal" role="button">Reserve Table</a>
+                            <a class="btn btn-warning btn-block btn-sm" id="reserveBtn" role="button">Reserve Table</a>
                         </div>
                     </div>
                     
@@ -319,28 +321,14 @@
            </div>
         </div>
     </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <!-- build:js js/main.js -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
 
 </body>
- <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
- <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
- <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
- <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
- <script>
-     $(document).ready(function(){
-         $('#mycarousel').carousel({interval:2000});
-         $('#carouselButton').click(function() {
-             if ($('#carouselButton').children('span').hasClass('fa-pause')) {
-                $('#mycarousel').carousel('pause');
-                $('#carouselButton').children('span').removeClass('fa-pause');
-                $('#carouselButton').children('span').addClass('fa-play');
-             }
-             else if ($('#carouselButton').children('span').hasClass('fa-play')) {
-                $('#mycarousel').carousel('cycle');
-                $('#carouselButton').children('span').removeClass('fa-play');
-                $('#carouselButton').children('span').addClass('fa-pause');
-             }
-         });
-     }
-     ); 
- </script>
+
 </html>
